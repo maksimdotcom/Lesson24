@@ -35,10 +35,25 @@ post '/visit' do
 
 	erb :message
 
-	if @username == ""
-		@error = 'Введите имя'
-		erb :visit
+	hh = {
+		:username => 'Введите имя',
+		:phone => 'Введите телефон',
+		:datetime =>'Введите дату и время'
+	}
+	# для каждой пары ключ значение
+	hh.each do |key, value|
+		#если параметр пуст 
+		if params[key] == ''
+			#переменной error  присвоить value из хеша hh
+			#(a value из хеша hh это сообщение об ошибке)
+			#т.е. перененой error присвоить сообщение об ошибке
+			@error = hh[key]
+			#вернуть представление visit
+			return erb :visit
+		end	
 	end
+	
+
 end
 
 post '/contacts' do
