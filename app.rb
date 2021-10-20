@@ -8,6 +8,7 @@ end
 
 
 get '/about' do
+	@error = 'something wrong'
 	erb :about
 end
 
@@ -33,6 +34,11 @@ post '/visit' do
 	f.close
 
 	erb :message
+
+	if @username == ""
+		@error = 'Введите имя'
+		erb :visit
+	end
 end
 
 post '/contacts' do
