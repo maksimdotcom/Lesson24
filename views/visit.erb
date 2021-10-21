@@ -3,13 +3,13 @@
 
 <form action="/visit" method="POST" role="form">
 
-<div class="form-group">
+  <div class="form-group">
     <label>Ваш парикмахер</label>
     <select name="hairdresser" class="form-select">
       <option value="Walter White">Walter White</option>
       <option value="Jessie Pinkman">Jessie Pinkman</option>
       <option value="Gus Fring">Gus Fring</option>
-  </select>
+    </select>
  </div>
 
   <div class="form-group">
@@ -27,6 +27,18 @@
     <input name="datetime" type="text" class="form-control" placeholder="Введите дату и время"value="<%=@datetime%>">
   </div>
 
+  <div class="form-group">
+    <label>В какие цвета хотите себя окрасить: </label>
+    <select id="color" name="color">
+      <option value="#7bd148">Green</option>
+      <option value="#5484ed">Bold</option>
+      <option value="#ff887c">Red</option>
+      <option value="#fbd75b">Yellow</option>
+      <option value="#e1e1e1">Grey</option>
+    </select>
+  </div>
+
   <button type="submit" class="btn btn-primary">Записаться</button>
 
 </form>
+
