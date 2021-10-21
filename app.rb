@@ -26,6 +26,8 @@ post '/visit' do
 	@phone     = params[:phone]
 	@datetime = params[:datetime]
 
+
+	
 	hh = {
 		:username => 'Введите имя',
 		:phone => 'Введите телефон',
